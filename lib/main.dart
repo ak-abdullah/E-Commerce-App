@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/UI/empty.dart';
 import 'package:e_commerce_app/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 import 'SplashScreen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
   WakelockPlus.enable();
 }
