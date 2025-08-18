@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 
-import '../models/Category.dart';
-import 'ProductsController.dart';
-import 'SubCategoriesController.dart';
+import '../models/category.dart';
+import 'products_controller.dart';
+import 'subcategories_controller.dart';
 
 class CategoriesController extends GetxController {
   final subCategoriesController = Get.find<SubCategoriesController>();
@@ -19,8 +19,6 @@ class CategoriesController extends GetxController {
       subCategoriesController.selectSubCategory(0); // select first
       productsController.setProducts(subCats[0].products);
     }
-
-    print("Updated");
   }
 
   void setCategories(List<Category> data) {

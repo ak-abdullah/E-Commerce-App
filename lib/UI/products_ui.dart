@@ -1,24 +1,23 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commerce_app/Controllers/ProductsController.dart';
-import 'package:e_commerce_app/Controllers/SubCategoriesController.dart';
+import 'package:e_commerce_app/Controllers/products_controller.dart';
+import 'package:e_commerce_app/Controllers/subcategories_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../Controllers/CategoriesController.dart';
 
-class Productsui extends StatelessWidget {
+class ProductsUi extends StatelessWidget {
   final ProductsController controller = Get.find<ProductsController>();
   final SubCategoriesController subCatController = Get.find<SubCategoriesController>();
 
-  Productsui({super.key});
+  ProductsUi({super.key});
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 21.w),
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         // color: Colors.blue.shade100,
         child: Column(

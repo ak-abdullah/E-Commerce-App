@@ -1,4 +1,4 @@
-import 'SubCategory.dart';
+import 'subcategory.dart';
 
 class Category {
   final int id;

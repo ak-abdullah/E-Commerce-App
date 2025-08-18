@@ -1,19 +1,17 @@
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:get/get.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../models/category.dart';
 
-import '../models/Category.dart';
-import 'CategoriesController.dart';
-import 'SubCategoriesController.dart';
-import 'ProductsController.dart';
+import 'categories_controller.dart';
+import 'subcategories_controller.dart';
+import 'products_controller.dart';
 
 class HomepageController extends GetxController {
   final productsController = Get.put(ProductsController());
   final subCategoriesController = Get.put(SubCategoriesController());
   final categoriesController = Get.put(CategoriesController());
-
-
-
 
   var isLoading = true.obs; // <-- reactive loading flag
 
@@ -37,12 +35,15 @@ class HomepageController extends GetxController {
         productsController.setProducts(categories[0].subCategory[0].products);
         subCategoriesController.setSubCategories(categories[0].subCategory);
         categoriesController.setCategories(categories);
-
       } else {
-        print('Failed to fetch data: ${response.statusCode}');
+        if (kDebugMode) {
+          print('Failed to fetch data: ${response.statusCode}');
+        }
       }
     } catch (e) {
-      print('Error fetching data: $e');
+      if (kDebugMode) {
+        print('Error fetching data: $e');
+      }
     } finally {
       isLoading.value = false; // stop loading
     }

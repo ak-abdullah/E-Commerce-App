@@ -1,7 +1,7 @@
-import 'package:e_commerce_app/models/SubCategory.dart';
+import 'package:e_commerce_app/models/subcategory.dart';
 import 'package:get/get.dart';
 
-import 'ProductsController.dart';
+import 'products_controller.dart';
 
 class SubCategoriesController extends GetxController {
   var subCategories = <SubCategory>[].obs;
