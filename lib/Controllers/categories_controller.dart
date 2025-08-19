@@ -16,7 +16,7 @@ class CategoriesController extends GetxController {
     final subCats = categories[index].subCategory;
     subCategoriesController.setSubCategories(subCats);
     if (subCats.isNotEmpty) {
-      subCategoriesController.selectSubCategory(0); // select first
+      subCategoriesController.selectSubCategory(0);
       productsController.setProducts(subCats[0].products);
     }
   }

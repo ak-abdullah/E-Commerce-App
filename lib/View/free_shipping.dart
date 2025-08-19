@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class FreeShippingUi extends StatelessWidget {
-  const FreeShippingUi({super.key});
+class FreeShipping extends StatelessWidget {
+  const FreeShipping({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Padding(
       padding: EdgeInsets.only(left: 21.w, right: 21.w, top: 10.h),
       child: Container(
@@ -40,10 +39,7 @@ class FreeShippingUi extends StatelessWidget {
                       fontFamily: 'Montserrat',
                       fontSize: 15.sp,
                       color: Color(0xFFFFFFFF),
-                      fontVariations: [
-                        FontVariation('wght', 600), // SemiBo
-                        // ld
-                      ],
+                      fontVariations: [FontVariation('wght', 600)],
                     ),
                   ),
                   Text(
@@ -53,9 +49,7 @@ class FreeShippingUi extends StatelessWidget {
                       fontFamily: 'Montserrat',
                       fontSize: 12.sp,
                       color: Color(0xFFFFFFFF),
-                      fontVariations: [
-                        FontVariation('wght', 500), // SemiBold
-                      ],
+                      fontVariations: [FontVariation('wght', 500)],
                     ),
                   ),
                 ],

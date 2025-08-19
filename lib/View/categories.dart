@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 
 import '../Controllers/categories_controller.dart';
 
-class CategoriesUi extends StatelessWidget {
+class Categories extends StatelessWidget {
   final CategoriesController controller = Get.find<CategoriesController>();
 
-  CategoriesUi({super.key});
+  Categories({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,21 +63,18 @@ class CategoriesUi extends StatelessWidget {
                                   controller.selectedIndex.value == index
                                       ? Color(0xFF000000)
                                       : Color(0xFF89999F),
-                              // fontWeight:
-                              //     controller.selectedIndex.value == index
-                              //         ? FontWeight.w700
-                              //         : FontWeight.w500,
+
                               fontVariations: [
                                 controller.selectedIndex.value == index
                                     ? FontVariation('wght', 700)
-                                    : FontVariation('wght', 500), // SemiBold
+                                    : FontVariation('wght', 500),
                               ],
                             ),
                           ),
                         ),
                         Positioned(
-                          top: -7.r,
-                          right: -7.r,
+                          top: -5.r,
+                          right: -5.r,
                           child: Container(
                             alignment: Alignment.center,
                             height: 14.r,
@@ -102,9 +99,7 @@ class CategoriesUi extends StatelessWidget {
                                     controller.selectedIndex.value == index
                                         ? Color(0xFF000000)
                                         : Color(0xFF89999F),
-                                fontVariations: [
-                                  FontVariation('wght', 600), // SemiBold
-                                ],
+                                fontVariations: [FontVariation('wght', 600)],
                                 fontSize: 5.sp,
                               ),
                             ),

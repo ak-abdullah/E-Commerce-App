@@ -5,16 +5,15 @@ import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import '../Controllers/subcategories_controller.dart';
 
-class SubCategoriesUi extends StatelessWidget {
+class SubCategories extends StatelessWidget {
   final SubCategoriesController controller =
       Get.find<SubCategoriesController>();
 
-  SubCategoriesUi({super.key});
+  SubCategories({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.blue,
       margin: EdgeInsets.only(top: 4.h, bottom: 7.h, left: 21.w, right: 21.w),
       padding: EdgeInsets.symmetric(vertical: 16.h),
       child: Obx(
@@ -39,12 +38,9 @@ class SubCategoriesUi extends StatelessWidget {
                           child: Stack(
                             children: [
                               Container(
-                                decoration: BoxDecoration(
-                                  // border: Border.all(color: Colors.black),
-                                ),
+                                decoration: BoxDecoration(),
                                 child: Container(
-                                  width: 56.47.r,
-                                  height: 56.47.r,
+                                  padding: EdgeInsets.all(1.5.r),
                                   decoration: BoxDecoration(
                                     border: Border.all(
                                       width: 1.5.r,
@@ -58,6 +54,9 @@ class SubCategoriesUi extends StatelessWidget {
                                   ),
                                   child: ClipOval(
                                     child: CachedNetworkImage(
+                                      width: 50.2.r,
+                                      height: 50.2.r,
+                                      fit: BoxFit.cover,
                                       imageUrl:
                                           controller.subCategories[index].image,
                                       placeholder:
@@ -104,7 +103,7 @@ class SubCategoriesUi extends StatelessWidget {
                                               ? Color(0xFF000000)
                                               : Color(0xFF89999F),
                                       fontVariations: [
-                                        FontVariation('wght', 600), // SemiBold
+                                        FontVariation('wght', 600),
                                       ],
                                       fontSize: 5.sp,
                                     ),

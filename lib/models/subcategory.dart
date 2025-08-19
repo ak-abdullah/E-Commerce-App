@@ -6,10 +6,27 @@ class SubCategory {
   final String image;
   final List<Product> products;
 
-  SubCategory.fromJson(Map<String, dynamic> json)
-    : id = json['id'],
-      name = json['name'],
-      image = json['image'],
-      products =
-          (json['products'] as List).map((e) => Product.fromJson(e)).toList();
+  SubCategory({
+    required this.id,
+    required this.name,
+    required this.image,
+    required this.products,
+  });
+
+  factory SubCategory.fromJson(Map<String, dynamic> json) {
+    try {
+      return SubCategory(
+        id: json['id'] ?? 0,
+        name: json['name'] ?? '',
+        image: json['image'] ?? '',
+        products:
+            (json['products'] as List?)
+                ?.map((e) => Product.fromJson(e))
+                .toList() ??
+            [],
+      );
+    } catch (e) {
+      return SubCategory(id: 0, name: '', image: '', products: []);
+    }
+  }
 }

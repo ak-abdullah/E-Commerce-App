@@ -6,20 +6,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 
-
-class ProductsUi extends StatelessWidget {
+class Products extends StatelessWidget {
   final ProductsController controller = Get.find<ProductsController>();
-  final SubCategoriesController subCatController = Get.find<SubCategoriesController>();
+  final SubCategoriesController subCatController =
+      Get.find<SubCategoriesController>();
 
-  ProductsUi({super.key});
+  Products({super.key});
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 21.w),
       child: SizedBox(
         width: double.infinity,
-        // color: Colors.blue.shade100,
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -35,22 +34,20 @@ class ProductsUi extends StatelessWidget {
                       color: Color(0xFF202020),
                       fontFamily: 'Montserrat',
                       fontSize: 16.sp,
-                      fontVariations: [
-                        FontVariation('wght', 700), // SemiBold
-                      ],
+                      fontVariations: [FontVariation('wght', 700)],
                     ),
                   ),
-                  Obx(() => Text(
-                    '(${subCatController.subCategories[subCatController.selectedIndex.value].name})',
-                    style: TextStyle(
-                      color: Color(0xFFB9202B),
-                      fontFamily: 'Montserrat',
-                      fontSize: 7.sp,
-                      fontVariations: [
-                        FontVariation('wght', 700), // SemiBold
-                      ],
+                  Obx(
+                    () => Text(
+                      '(${subCatController.subCategories[subCatController.selectedIndex.value].name})',
+                      style: TextStyle(
+                        color: Color(0xFFB9202B),
+                        fontFamily: 'Montserrat',
+                        fontSize: 7.sp,
+                        fontVariations: [FontVariation('wght', 700)],
+                      ),
                     ),
-                  ),)
+                  ),
                 ],
               ),
             ),
@@ -110,7 +107,7 @@ class ProductsUi extends StatelessWidget {
                                       fontFamily: 'Montserrat',
                                       fontSize: 11.sp,
                                       fontVariations: [
-                                        FontVariation('wght', 500), // SemiBold
+                                        FontVariation('wght', 500),
                                       ],
                                     ),
                                   ),
@@ -131,10 +128,7 @@ class ProductsUi extends StatelessWidget {
                                           fontSize: 13.sp,
                                           color: Color(0xFF89999F),
                                           fontVariations: [
-                                            FontVariation(
-                                              'wght',
-                                              500,
-                                            ), // SemiBold
+                                            FontVariation('wght', 500),
                                           ],
                                         ),
                                       ),
@@ -150,10 +144,7 @@ class ProductsUi extends StatelessWidget {
                                             fontSize: 13.sp,
                                             color: Color(0xFFB9202B),
                                             fontVariations: [
-                                              FontVariation(
-                                                'wght',
-                                                600,
-                                              ), // SemiBold
+                                              FontVariation('wght', 600),
                                             ],
                                           ),
                                         ),
@@ -193,10 +184,7 @@ class ProductsUi extends StatelessWidget {
                                                 fontSize: 9.sp,
                                                 color: Color(0xFFB9202B),
                                                 fontVariations: [
-                                                  FontVariation(
-                                                    'wght',
-                                                    500,
-                                                  ), // SemiBold
+                                                  FontVariation('wght', 500),
                                                 ],
                                               ),
                                             ),
@@ -219,8 +207,7 @@ class ProductsUi extends StatelessWidget {
                                       color: Color(0xFF28A745),
                                       borderRadius: BorderRadius.circular(2.r),
                                     ),
-                                    // width: 40.w,
-                                    // height: 18.h,
+
                                     child: Center(
                                       child: Text(
                                         '-${controller.products[index].discountPercentage}%',
@@ -229,10 +216,7 @@ class ProductsUi extends StatelessWidget {
                                           fontSize: 9.sp,
                                           color: Color(0xFFFFFFFF),
                                           fontVariations: [
-                                            FontVariation(
-                                              'wght',
-                                              500,
-                                            ), // SemiBold
+                                            FontVariation('wght', 500),
                                           ],
                                         ),
                                       ),

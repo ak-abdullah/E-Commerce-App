@@ -9,11 +9,10 @@ class SubcategoriesShimmer extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = ScreenUtil().screenWidth;
 
-    final itemWidth = 56.47.r; // width of circle
-    final spacing = 9.41.w;    // space between items
+    final itemWidth = 56.47.r;
+    final spacing = 9.41.w;
     final totalItemWidth = itemWidth + spacing;
 
-    // Calculate how many items can fit on screen
     final itemCount = (screenWidth / totalItemWidth).ceil();
 
     return Container(
@@ -24,7 +23,7 @@ class SubcategoriesShimmer extends StatelessWidget {
         child: Row(
           children: List.generate(
             itemCount,
-                (index) => Row(
+            (index) => Row(
               children: [
                 Column(
                   mainAxisSize: MainAxisSize.min,
@@ -52,8 +51,7 @@ class SubcategoriesShimmer extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(4.r),
-                        )
-
+                        ),
                       ),
                     ),
                   ],
@@ -68,7 +66,6 @@ class SubcategoriesShimmer extends StatelessWidget {
   }
 }
 
-
 class CategoriesShimmer extends StatelessWidget {
   const CategoriesShimmer({super.key});
 
@@ -76,11 +73,11 @@ class CategoriesShimmer extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = ScreenUtil().screenWidth;
 
-    final itemWidth = 80.w; // width of category placeholder
-    final spacing = 10.w;   // space between items
+    final itemWidth = 80.w;
+    final spacing = 10.w;
     final totalItemWidth = itemWidth + spacing;
 
-    final itemCount = (screenWidth / totalItemWidth).ceil(); // dynamic count
+    final itemCount = (screenWidth / totalItemWidth).ceil();
 
     return Container(
       decoration: BoxDecoration(
@@ -118,13 +115,11 @@ class CategoriesShimmer extends StatelessWidget {
   }
 }
 
-
 class ProductsShimmer extends StatelessWidget {
   const ProductsShimmer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Calculate number of cards dynamically based on screen width
     final screenWidth = ScreenUtil().screenWidth;
     final cardWidth = 150.r;
     final spacing = 20.w;
@@ -136,7 +131,6 @@ class ProductsShimmer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Section title shimmer
           Padding(
             padding: EdgeInsets.only(bottom: 12.h),
             child: Row(
@@ -149,21 +143,18 @@ class ProductsShimmer extends StatelessWidget {
             ),
           ),
 
-          // Horizontal list of product cards shimmer
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: List.generate(itemCount, (index) {
                 return Row(
                   children: [
-                    // Wrap each card in Align + SizedBox for top alignment
                     Align(
                       alignment: Alignment.topLeft,
                       child: SizedBox(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Product image with padding
                             Padding(
                               padding: EdgeInsets.only(bottom: 10.h),
                               child: _shimmerBox(
@@ -173,11 +164,10 @@ class ProductsShimmer extends StatelessWidget {
                               ),
                             ),
 
-                            // Product name
                             _shimmerBox(width: 100.w, height: 11.h),
 
-                            SizedBox(height: 6.h), // space between name & price
-                            // Price row
+                            SizedBox(height: 6.h),
+
                             Row(
                               children: [
                                 _shimmerBox(width: 40.w, height: 13.h),
@@ -186,7 +176,6 @@ class ProductsShimmer extends StatelessWidget {
                               ],
                             ),
 
-                            // Sold out bar (match exact padding and height)
                             Padding(
                               padding: EdgeInsets.only(
                                 top: 9.8.h,
@@ -203,7 +192,6 @@ class ProductsShimmer extends StatelessWidget {
                       ),
                     ),
 
-                    // Space between cards
                     if (index < itemCount - 1) SizedBox(width: spacing),
                   ],
                 );
